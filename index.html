@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sabtu, 27 Disember 2026 · No 77 Taman Angsana, Changlun, Kedah. Kehadiran dan doa restu anda amat kami hargai.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Walimatul Urus Iyman &amp; Alya">
+<meta property="og:description" content="Sabtu, 27 Disember 2026 · Changlun, Kedah. Ketik untuk buka kad jemputan.">
+<meta property="og:url" content="https://walimatul-iyman-alya.netlify.app/">
+<meta property="og:image" content="https://walimatul-iyman-alya.netlify.app/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+<title>Walimatul Urus Iyman & Alya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+/* VOICE: tender, warm, quiet — a wedding invitation handed over in person
+   IDEA: a kraft envelope that opens to reveal a two-sided card
+   PICTURE: the card itself, large, flippable front/back
+   COLOUR and TYPE: kraft brown dominant, cream paper support, deep espresso accent; Poppins + Mrs Saint Delafield script
+   LAYOUT: one centred column — envelope, then card, countdown, actions */
+:root{color-scheme:light dark;
+  --bg:light-dark(#e9dccb,#2a2119);--ink:light-dark(#3b2a1c,#f3e9dc);
+  --kraft:#b98b5e;--kraft-d:#8f6641;--paper:light-dark(#f7efe4,#3a2e23);
+  --accent:light-dark(#5a3b22,#e8c9a3);--muted:light-dark(#7a6552,#c9b49c)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Poppins,system-ui,sans-serif;overflow-x:clip;
+  background-image:radial-gradient(circle at 20% 10%,rgba(255,255,255,.18),transparent 45%),radial-gradient(circle at 85% 90%,rgba(0,0,0,.08),transparent 50%);min-height:100vh}
+.wrap{max-width:560px;margin:0 auto;padding:clamp(20px,5vw,48px) 16px 56px;display:flex;flex-direction:column;align-items:center;gap:28px}
+
+/* Envelope intro */
+#intro{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--bg);transition:opacity .7s ease,visibility .7s}
+#intro.gone{opacity:0;visibility:hidden}
+.env{position:relative;width:min(86vw,380px);aspect-ratio:1.45;cursor:pointer;border:0;padding:0;background:none;perspective:900px}
+.env .body{position:absolute;inset:0;border-radius:6px;background:linear-gradient(160deg,var(--kraft),var(--kraft-d));box-shadow:0 24px 48px -18px rgba(40,25,10,.55)}
+.env .pocket{position:absolute;inset:0;border-radius:6px;z-index:3;
+  background:linear-gradient(to top right,#a77a4f 50%,transparent 50.4%) left/50.2% 100% no-repeat,linear-gradient(to top left,#a77a4f 50%,transparent 50.4%) right/50.2% 100% no-repeat}
+.env .flap{position:absolute;left:0;right:0;top:0;height:62%;z-index:4;transform-origin:top;transition:transform .8s cubic-bezier(.6,0,.3,1),z-index 0s .4s;
+  clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(#c79a6c,#a47549)}
+.env .seal{position:absolute;left:50%;top:56%;z-index:5;width:64px;height:64px;margin:-32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#f6ecdf,#e3d2bb);color:#5a3b22;display:grid;place-items:center;
+  font:36px/1 'Mrs Saint Delafield',cursive;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:opacity .3s}
+.env .peek{position:absolute;left:7%;right:7%;top:8%;bottom:6%;z-index:2;border-radius:4px;background:url(depan.jpg) center 30%/cover;transition:transform .8s .35s cubic-bezier(.3,.7,.3,1)}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0}
+.env.open .peek{transform:translateY(-55%)}
+.hint{text-align:center;margin-top:22px}
+.hint b{display:block;font:44px/1.1 'Mrs Saint Delafield',cursive;font-weight:400;color:var(--accent)}
+.hint span{font-size:14px;color:var(--muted)}
+
+/* Card */
+.lead{text-align:center}
+.lead small{font-size:14px;color:var(--muted)}
+.lead h1{margin:2px 0 0;font:400 clamp(48px,12vw,64px)/1.05 'Mrs Saint Delafield',cursive;color:var(--accent)}
+.stage{width:min(100%,420px);aspect-ratio:9/16;perspective:1600px}
+.card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,.1,.2,1);cursor:pointer}
+.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;overflow:hidden;
+  box-shadow:0 30px 60px -24px rgba(40,25,10,.6),0 2px 0 rgba(255,255,255,.25) inset}
+.face img{width:100%;height:100%;object-fit:cover;display:block}
+.face.back{transform:rotateY(180deg)}
+.toggle{display:flex;gap:6px;background:var(--paper);padding:5px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.toggle button{font:500 15px Poppins,sans-serif;border:0;background:none;color:var(--ink);min-height:44px;padding:0 22px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed=true]{background:var(--accent);color:var(--paper)}
+
+/* Countdown */
+.count{width:100%;background:var(--paper);border-radius:14px;padding:20px 16px;text-align:center}
+.count p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cd div{display:flex;flex-direction:column}
+.cd b{font:600 clamp(26px,8vw,36px)/1.1 Poppins,sans-serif;color:var(--accent);font-variant-numeric:tabular-nums}
+.cd span{font-size:13px;color:var(--muted)}
+.facts{margin:14px 0 0;font-size:15px}
+
+/* Actions */
+.actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:12px;text-decoration:none;
+  font:500 15px Poppins,sans-serif;border:1.5px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer;padding:0 12px;text-align:center}
+.btn.solid{background:var(--accent);color:var(--paper)}
+.btn.wide{grid-column:1/-1}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:focus-visible,.toggle button:focus-visible,.env:focus-visible{outline:3px solid var(--kraft);outline-offset:3px}
+.toast{min-height:22px;font-size:14px;color:var(--muted);text-align:center;margin:-14px 0 0}
+footer{font:400 32px/1 'Mrs Saint Delafield',cursive;color:var(--accent);text-align:center}
+footer small{display:block;font:13px/1.5 Poppins,sans-serif;color:var(--muted);margin-top:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="intro">
+  <div>
+    <button class="env" id="env" aria-label="Buka kad jemputan">
+      <span class="body"></span><span class="peek"></span><span class="pocket"></span><span class="flap"></span><span class="seal">I&amp;A</span>
+    </button>
+    <div class="hint"><b>Anda dijemput</b><span>Ketik sampul untuk buka kad</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="lead"><small>Walimatul Urus</small><h1>Iyman &amp; Alya</h1></div>
+
+  <div class="stage">
+    <div class="card" id="card" role="button" tabindex="0" aria-label="Terbalikkan kad">
+      <div class="face front"><img src="depan.jpg" alt="Kad depan: Walimatul Urus Iyman & Alya, Sabtu 27 Disember 2026, No 77 Taman Angsana, 06010 Changlun, Kedah Darul Aman"></div>
+      <div class="face back"><img src="belakang.jpg" alt="Kad belakang: Undangan majlis perkahwinan Mohd Iyman bin Sazali & Alya Khairina binti Zulkepeli, anjuran Sazali bin Hassan & Sulia binti Abdullah. Sabtu 27 Disember 2026 bersamaan 18 Rejab 1448H, 10 pagi hingga 5 petang, No 77 Taman Angsana, 06010 Changlun, Kedah"></div>
+    </div>
+  </div>
+  <div class="toggle" role="group" aria-label="Pilih muka kad">
+    <button id="tFront" aria-pressed="true">Depan</button>
+    <button id="tBack" aria-pressed="false">Belakang</button>
+  </div>
+
+  <section class="count">
+    <p id="cdLabel">Menghitung hari ke majlis</p>
+    <div class="cd" id="cd">
+      <div><b id="d">–</b><span>Hari</span></div>
+      <div><b id="h">–</b><span>Jam</span></div>
+      <div><b id="m">–</b><span>Minit</span></div>
+      <div><b id="s">–</b><span>Saat</span></div>
+    </div>
+    <p class="facts"><strong>Sabtu, 27 Disember 2026</strong> · 18 Rejab 1448H<br>10 pagi – 5 petang<br>No 77, Taman Angsana, 06010 Changlun, Kedah Darul Aman</p>
+  </section>
+
+  <div class="actions">
+    <a class="btn solid" href="https://scan.page/m4xYX2" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Lokasi majlis</a>
+    <a class="btn" target="_blank" rel="noopener"
+      href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Walimatul%20Urus%20Iyman%20%26%20Alya&dates=20261227T020000Z/20261227T090000Z&location=No%2077%2C%20Taman%20Angsana%2C%2006010%20Changlun%2C%20Kedah&details=Majlis%20perkahwinan%20Mohd%20Iyman%20bin%20Sazali%20%26%20Alya%20Khairina%20binti%20Zulkepeli.%2010%20pagi%20-%205%20petang.">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Simpan tarikh</a>
+    <button class="btn wide" id="copy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Salin teks jemputan</button>
+  </div>
+  <p class="toast" id="toast" aria-live="polite"></p>
+
+  <footer>Terima kasih<small>Kehadiran dan doa restu anda amat kami hargai.<br>Sazali bin Hassan &amp; Sulia binti Abdullah</small></footer>
+</main>
+
+<script>
+{
+  const intro=document.getElementById('intro'),env=document.getElementById('env');
+  let opened=false;
+  try{if(sessionStorage.getItem('ecard-open'))intro.classList.add('gone')}catch(e){}
+  env.addEventListener('click',()=>{
+    if(opened)return;opened=true;env.classList.add('open');
+    setTimeout(()=>intro.classList.add('gone'),1500);
+    try{sessionStorage.setItem('ecard-open','1')}catch(e){}
+  });
+
+  const card=document.getElementById('card'),tF=document.getElementById('tFront'),tB=document.getElementById('tBack');
+  const set=back=>{card.classList.toggle('flip',back);tF.setAttribute('aria-pressed',!back);tB.setAttribute('aria-pressed',back)};
+  card.addEventListener('click',()=>set(!card.classList.contains('flip')));
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();set(!card.classList.contains('flip'))}});
+  tF.addEventListener('click',()=>set(false));tB.addEventListener('click',()=>set(true));
+
+  const target=Date.UTC(2026,11,27,2,0,0),end=Date.UTC(2026,11,27,9,0,0);
+  const el=id=>document.getElementById(id),pad=n=>String(n).padStart(2,'0');
+  const tick=()=>{
+    const now=Date.now();
+    if(now>=end){el('cdLabel').textContent='Majlis telah berlangsung. Terima kasih atas doa restu anda.';el('cd').style.display='none';return}
+    if(now>=target){el('cdLabel').textContent='Majlis sedang berlangsung hari ini!';el('cd').style.display='none';return}
+    let t=Math.floor((target-now)/1000);
+    el('d').textContent=Math.floor(t/86400);t%=86400;
+    el('h').textContent=pad(Math.floor(t/3600));t%=3600;
+    el('m').textContent=pad(Math.floor(t/60));el('s').textContent=pad(t%60);
+  };
+  tick();const timer=setInterval(tick,1000);
+
+  const text=`Assalamualaikum & salam sejahtera.
+
+Dengan penuh kesyukuran, Sazali bin Hassan & Sulia binti Abdullah menjemput anda sekeluarga ke Majlis Perkahwinan putera kami:
+
+Mohd Iyman bin Sazali & Alya Khairina binti Zulkepeli
+
+📅 Sabtu, 27 Disember 2026 (18 Rejab 1448H)
+🕙 10 pagi – 5 petang
+📍 No 77, Taman Angsana, 06010 Changlun, Kedah Darul Aman
+🗺️ Lokasi: https://scan.page/m4xYX2
+
+Kehadiran dan doa restu anda amat kami hargai.`;
+  const toast=el('toast');
+  el('copy').addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(text);toast.textContent='Teks jemputan disalin. Tampal di WhatsApp atau mesej.'}
+    catch(e){toast.textContent='Tidak dapat menyalin pada peranti ini.'}
+    setTimeout(()=>toast.textContent='',4000);
+  });
+}
+</script>
+</body>
+</html>
